@@ -1,0 +1,166 @@
+main {
+	min-height: 100%;
+	margin: 5rem 7rem;
+	display: grid;
+	grid-template-columns: 70% 30%;
+	gap: 2rem;
+}
+
+header {
+	font-size: 28px;
+	color: $rose-900;
+}
+
+section.product-list {
+	margin: 2rem 0;
+	min-width: 100%;
+	max-height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 2rem;
+
+	& div.product {
+		position: relative;
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+div.product-image {
+	position: relative;
+	& img {
+		border-radius: 1rem;
+	}
+}
+
+div.add-to-cart {
+	@include displayFlex(center, center, row);
+	position: absolute;
+	bottom: -17px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 13%;
+	background-color: $rose-50;
+	border: 1.5px solid black;
+	border-radius: 2rem;
+	cursor: pointer;
+
+	& img {
+		padding-top: 5px;
+	}
+
+	& p {
+		font-weight: 500;
+		border: none;
+		background-color: $rose-50;
+		margin-left: 1rem;
+	}
+}
+
+div.add-to-cart:hover {
+	border-color: $rose-500;
+
+	& p {
+		color: $rose-500;
+	}
+}
+
+div.add-amount {
+	@include displayFlex(space-around, center, row);
+	background-color: $red;
+	position: absolute;
+	bottom: -17px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60%;
+	height: 13%;
+	border: 1.5px solid $red;
+	border-radius: 2rem;
+
+	& p.amount {
+		color: $rose-50;
+	}
+}
+
+div.increment,
+div.decrement {
+	@include displayFlex(center, center, row);
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	border: 2px solid $rose-50;
+	padding: 5px;
+	cursor: pointer;
+}
+
+div.increment:hover {
+	background-color: $rose-50;
+
+	& img {
+		filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+	}
+}
+
+div.decrement:hover {
+	background-color: $rose-50;
+
+	& img {
+		filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+	}
+}
+
+.hide {
+	visibility: hidden;
+}
+
+div.desc {
+	margin-top: 1rem;
+
+	& p {
+		padding: 0.1rem;
+	}
+
+	& p.small-product-text {
+		color: $rose-400;
+	}
+
+	& p.big-product-text {
+		color: $rose-900;
+		font-weight: 700;
+	}
+
+	& p.price {
+		color: $red;
+		font-weight: 600;
+	}
+}
+
+div.cart {
+	max-height: 30%;
+	width: 80%;
+	background-color: $rose-50;
+	border-radius: 1rem;
+	padding: 2rem;
+
+	& h2 {
+		color: $red;
+	}
+}
+
+div.in-cart {
+	@include displayFlex(center, center, column);
+	margin-top: 2rem;
+	& p {
+		color: $rose-500;
+	}
+}
+
+div.in-cart-image {
+	width: 40%;
+	height: 40%;
+
+	& img {
+		width: 100%;
+	}
+}

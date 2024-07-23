@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+main {
+  min-height: 100%;
+  margin: 5rem 7rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 2rem;
+}
+
+header {
+  font-size: 28px;
+  color: hsl(14, 65%, 9%);
+}
+
+section.product-list {
+  margin: 2rem 0;
+  min-width: 100%;
+  max-height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 2rem;
+}
+section.product-list div.product {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+div.product-image {
+  position: relative;
+}
+div.product-image img {
+  border-radius: 1rem;
+}
+
+div.add-to-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 60%;
+  height: 13%;
+  background-color: hsl(20, 50%, 98%);
+  border: 1.5px solid black;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+div.add-to-cart img {
+  padding-top: 5px;
+}
+div.add-to-cart p {
+  font-weight: 500;
+  border: none;
+  background-color: hsl(20, 50%, 98%);
+  margin-left: 1rem;
+}
+
+div.add-to-cart:hover {
+  border-color: hsl(12, 20%, 44%);
+}
+div.add-to-cart:hover p {
+  color: hsl(12, 20%, 44%);
+}
+
+div.add-amount {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: hsl(14, 86%, 42%);
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 60%;
+  height: 13%;
+  border: 1.5px solid hsl(14, 86%, 42%);
+  border-radius: 2rem;
+}
+div.add-amount p.amount {
+  color: hsl(20, 50%, 98%);
+}
+
+div.increment,
+div.decrement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid hsl(20, 50%, 98%);
+  padding: 5px;
+  cursor: pointer;
+}
+
+div.increment:hover {
+  background-color: hsl(20, 50%, 98%);
+}
+div.increment:hover img {
+  -webkit-filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+          filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+}
+
+div.decrement:hover {
+  background-color: hsl(20, 50%, 98%);
+}
+div.decrement:hover img {
+  -webkit-filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+          filter: hue-rotate(180deg) saturate(200%) brightness(50%);
+}
+
+.hide {
+  visibility: hidden;
+}
+
+div.desc {
+  margin-top: 1rem;
+}
+div.desc p {
+  padding: 0.1rem;
+}
+div.desc p.small-product-text {
+  color: hsl(7, 20%, 60%);
+}
+div.desc p.big-product-text {
+  color: hsl(14, 65%, 9%);
+  font-weight: 700;
+}
+div.desc p.price {
+  color: hsl(14, 86%, 42%);
+  font-weight: 600;
+}
+
+div.cart {
+  max-height: 30%;
+  width: 80%;
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+div.cart h2 {
+  color: hsl(14, 86%, 42%);
+}
+
+div.in-cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2rem;
+}
+div.in-cart p {
+  color: hsl(12, 20%, 44%);
+}
+
+div.in-cart-image {
+  width: 40%;
+  height: 40%;
+}
+div.in-cart-image img {
+  width: 100%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(13, 31%, 94%);
+  position: relative;
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+img {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
