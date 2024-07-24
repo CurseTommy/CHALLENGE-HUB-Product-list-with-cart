@@ -147,6 +147,10 @@ div.decrement:hover img {
   visibility: hidden;
 }
 
+.displayNone {
+  display: none;
+}
+
 div.desc {
   margin-top: 1rem;
 }
@@ -202,6 +206,22 @@ div.in-cart-image {
 }
 div.in-cart-image img {
   width: 100%;
+}
+
+div.cart-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .attribution {

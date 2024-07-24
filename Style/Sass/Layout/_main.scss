@@ -114,6 +114,10 @@ div.decrement:hover {
 	visibility: hidden;
 }
 
+.displayNone {
+	display: none;
+}
+
 div.desc {
 	margin-top: 1rem;
 
@@ -163,4 +167,8 @@ div.in-cart-image {
 	& img {
 		width: 100%;
 	}
+}
+
+div.cart-items {
+	@include displayFlex(center, flex-start, column);
 }
