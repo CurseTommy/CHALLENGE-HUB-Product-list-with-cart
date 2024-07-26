@@ -10,32 +10,16 @@ const addAmount = document.querySelectorAll('.add-amount');
 const inCartImage = document.querySelector('.in-cart-image');
 const inCartP = document.querySelector('#in-cart-p');
 
-// console.log(
-// 	productPrice,
-// 	productName,
-// 	addToCartButton,
-// 	cartItems,
-// 	addAmount,
-// 	inCartP
-// );
-
-/**
- * Adds event listeners to all elements with the 'add-to-cart' class, which will call the `addToCart` function with the index of the clicked element when clicked.
- */
 addToCartButton.forEach((e, index: number) => {
 	e.addEventListener('click', function () {
-		addToCart(index);
+		showItemInCart(index);
+		addItemToCart(index);
 	});
 });
 let finalPrice: number = 0;
 let itemsAmount: number = 0;
-/**
- * Adds a product to the cart, updating the cart items count, displaying the "in cart" message, and creating a new cart item.
- *
- * @param {number} index - The index of the product being added to the cart.
- */
 
-function addToCart(index: number): void {
+function showItemInCart(index: number): void {
 	// Total value of the cart
 	finalPrice += Number(productPrice[index].lastChild?.nodeValue);
 
@@ -50,22 +34,34 @@ function addToCart(index: number): void {
 	}
 
 	// Hide empty cart graphic and txt
-	const inCartAppear = [inCartImage, inCartP];
-	inCartAppear.forEach((e) => e?.classList.add('displayNone'));
+	const inCartAppear: [any, any] = [inCartImage, inCartP];
+	inCartAppear.forEach((e) => e.classList.add('displayNone'));
+}
 
+function addItemToCart(index: number): void {
 	// Create a new div for the cart item
 	const cartItem = document.createElement('div');
-	cartItem.classList.add('cart-item');
+	cartItem.classList.add('price-for-item');
 
 	// Add product name
 	const itemName = document.createElement('p');
 	itemName.textContent = productName[index].textContent;
-	cartItem.appendChild(itemName);
+	cartItems?.appendChild(itemName);
 
-	// Add price
+	// Add product quantity
+	const itemQuantity = document.createElement('p');
+	itemQuantity.textContent = '1';
+	cartItem.appendChild(itemQuantity);
+
+	// Add product price
 	const itemPrice = document.createElement('p');
 	itemPrice.textContent = productPrice[index].textContent;
 	cartItem.appendChild(itemPrice);
+
+	// Underline
+	const itemUnderline = document.createElement('span');
+	itemUnderline.classList.add('underline');
+	cartItem.appendChild(itemUnderline);
 
 	// Append the new cart item to the cartItems container
 	cartItems?.appendChild(cartItem);
