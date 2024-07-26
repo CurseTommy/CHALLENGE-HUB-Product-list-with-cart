@@ -1,5 +1,3 @@
-'use strict';
-
 const addToCartButton = document.querySelectorAll('.add-to-cart');
 const increment = document.querySelectorAll('.increment');
 const decrement = document.querySelectorAll('.decrement');
@@ -29,7 +27,6 @@ addToCartButton.forEach((e, index: number) => {
 		addToCart(index);
 	});
 });
-
 let finalPrice: number = 0;
 let itemsAmount: number = 0;
 /**
@@ -38,7 +35,7 @@ let itemsAmount: number = 0;
  * @param {number} index - The index of the product being added to the cart.
  */
 
-function addToCart(index: number) {
+function addToCart(index: number): void {
 	// Total value of the cart
 	finalPrice += Number(productPrice[index].lastChild?.nodeValue);
 
