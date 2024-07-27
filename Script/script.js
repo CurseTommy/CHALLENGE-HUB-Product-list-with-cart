@@ -18,8 +18,9 @@ addToCartButton.forEach((e, index) => {
 let finalPrice = 0;
 let itemsAmount = 0;
 function showItemInCart(index) {
-    var _a;
-    finalPrice += Number((_a = productPrice[index].lastChild) === null || _a === void 0 ? void 0 : _a.nodeValue);
+    productPrice[index].lastChild
+        ? (finalPrice += Number(productPrice[index].lastChild.nodeValue))
+        : 0;
     addToCartButton[index].classList.add('hide');
     addAmount[index].classList.remove('hide');
     itemsAmount += 1;
@@ -34,7 +35,7 @@ function addItemToCart(index) {
     cartItem.classList.add('price-for-item');
     const itemName = document.createElement('p');
     itemName.textContent = productName[index].textContent;
-    cartItems === null || cartItems === void 0 ? void 0 : cartItems.appendChild(itemName);
+    cartItems.appendChild(itemName);
     const itemQuantity = document.createElement('p');
     itemQuantity.textContent = '1';
     cartItem.appendChild(itemQuantity);
@@ -44,5 +45,5 @@ function addItemToCart(index) {
     const itemUnderline = document.createElement('span');
     itemUnderline.classList.add('underline');
     cartItem.appendChild(itemUnderline);
-    cartItems === null || cartItems === void 0 ? void 0 : cartItems.appendChild(cartItem);
+    cartItems.appendChild(cartItem);
 }
