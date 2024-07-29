@@ -18,9 +18,8 @@ addToCartButton.forEach((e, index) => {
 let finalPrice = 0;
 let itemsAmount = 0;
 function showItemInCart(index) {
-    productPrice[index].lastChild
-        ? (finalPrice += Number(productPrice[index].lastChild.nodeValue))
-        : 0;
+    var _a, _b;
+    finalPrice += Number((_b = (_a = productPrice[index].lastChild) === null || _a === void 0 ? void 0 : _a.nodeValue) !== null && _b !== void 0 ? _b : 0);
     addToCartButton[index].classList.add('hide');
     addAmount[index].classList.remove('hide');
     itemsAmount += 1;

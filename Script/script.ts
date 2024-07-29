@@ -21,9 +21,7 @@ let itemsAmount: number = 0;
 
 function showItemInCart(index: number): void {
 	// Total value of the cart
-	productPrice[index].lastChild
-		? (finalPrice += Number(productPrice[index].lastChild.nodeValue))
-		: 0;
+	finalPrice += Number(productPrice[index].lastChild?.nodeValue ?? 0);
 
 	// Hide, append amount handler button
 	addToCartButton[index].classList.add('hide');
